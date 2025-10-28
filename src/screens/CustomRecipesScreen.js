@@ -28,7 +28,7 @@ import {
     );
     console.log('favoriteRecipe from custom',favoriteRecipe);
     
-    const isFavourite = favoriteRecipe.includes(recipe.idCategory); // Adjust this according to your recipe structure
+    const isFavourite = favoriteRecipe.some(favRecipe => favRecipe.idFood === recipe.idFood || favRecipe.id === recipe.id);
   
     if (!recipe) {
       return (
@@ -147,4 +147,3 @@ import {
       color: "#4B5563",
     },
   });
-  
